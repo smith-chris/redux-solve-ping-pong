@@ -1,12 +1,13 @@
-import { Action } from 'redux'
+import { makeReducer, makeActionCreators } from 'redux-solve'
 
-export default (state = 0, action: Action) => {
-  switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    case 'DECREMENT':
-      return state - 1
-    default:
-      return state
-  }
+type State = number
+
+const initialState: State = 0
+
+const resolvers = {
+  increment: (state: State) => (): State => state + 1,
+  decrement: (state: State) => (): State => state - 1,
 }
+
+export const actions = makeActionCreators(resolvers, initialState)
+export const reducer = makeReducer(resolvers, initialState)
