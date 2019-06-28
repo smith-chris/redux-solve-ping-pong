@@ -1,4 +1,6 @@
-export default (state = 0, action) => {
+import { Action } from 'redux'
+
+export default (state = 0, action: Action) => {
   switch (action.type) {
     case 'INCREMENT':
       return state + 1
