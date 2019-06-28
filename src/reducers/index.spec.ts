@@ -1,9 +1,10 @@
 import counter from './index'
+import { Action } from 'redux'
 
 describe('reducers', () => {
   describe('counter', () => {
     it('should provide the initial state', () => {
-      expect(counter(undefined, {})).toBe(0)
+      expect(counter(undefined, {} as Action)).toBe(0)
     })
 
     it('should handle INCREMENT action', () => {
