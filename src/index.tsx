@@ -36,6 +36,12 @@ store.subscribe(() => {
   console.log(store.getState())
 })
 
+/**
+ * Below part is React specific and is purely for demonstartion purposes.
+ * You could remove it and dispatch actions programatically like so:
+ * `store.dispatch(actions.ping())`
+ */
+
 type AppProps = State & typeof actions
 
 let App: FunctionComponent<AppProps> = ({ isPinging, ping }) => (
